@@ -7,13 +7,40 @@
         content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"
         href="./styles.css">
-  <script src="./dist/app.js"></script>
+  <script src="./dist/app.js"
+          defer></script>
   <title>Web Design Playground</title>
 </head>
 
 <body>
 
-
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="subnavLi">
+          <a onclick="onClickSubnav('location-subnav', event)">Went to the &#9660;</a>
+          <ul id="location-subnav">
+            <li><a href="#">Market</a></li>
+            <li><a href="#">Slaughterhouse</a></li>
+            <li><a href="#">Zoo</a></li>
+            <li><a href="#">Marakesh...!?</a></li>
+          </ul>
+        </li>
+        <li class="subnavLi">
+          <a onclick="onClickSubnav('food-subnav', event)">Had &#9660;</a>
+          <ul id="food-subnav">
+            <li><a href="#">Bread & Butter</a></li>
+            <li><a href="#">Honey</a></li>
+            <li><a href="#">BEER!!!!</a></li>
+            <li><a href="#">Granola</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Had None</a></li>
+        <li><a href="#">Went Wee Wee Wee All the Way Home</a></li>
+      </ul>
+    </nav>
+  </header>
 
 </body>
 
