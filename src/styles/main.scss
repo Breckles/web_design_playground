@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.blank {
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}
+
+.adjective {
+  background-color: lightblue;
+}
+
+.person {
+  background-color: red;
+}
+
+.singleNoun,
+.pluralNoun {
+  background-color: salmon;
+}
+
+#controls * {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#surfaceNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(51, 51, 51, 0.8);
+}
