@@ -37,11 +37,12 @@ body {
 }
 
 #surfaceNav {
-  display: none;
+  // display: none;
+  display: flex;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: calc((100vw / 2) - 50vh);
+  width: 100vh;
   height: 100vh;
   background-color: rgb(51, 51, 51, 0.8);
   align-items: center;
@@ -55,12 +56,14 @@ body {
 }
 
 .node {
+  position: absolute;
+  left: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
+  width: fit-content;
+  height: fit-content;
   border-radius: 50%;
   background: white;
+  padding: 0.5rem;
 }
