@@ -37,8 +37,6 @@ body {
 }
 
 #surfaceNav {
-  // display: none;
-  display: flex;
   position: fixed;
   top: 0;
   left: calc((100vw / 2) - 50vh);
@@ -55,42 +53,7 @@ body {
   background-color: white;
 }
 
-#svgContainer {
+#svgRoot {
   width: 100%;
   height: 100%;
-}
-
-#svgCircle {
-  // Geometry property 'r' is not supported by Firefox yet. It will be set via
-  // javascript instead. r: 150;
-  cx: 50%;
-  cy: 50%;
-  stroke: black;
-  stroke-width: 2;
-  fill: white;
-  fill-rule: evenodd;
-}
-
-#svgText {
-  x: 50%;
-  y: 50%;
-  text-anchor: middle;
-}
-
-g {
-  display: block;
-}
-
-.node {
-  position: absolute;
-  left: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-  border: 1px solid black;
-  border-radius: 50%;
-  background: white;
-  padding: 0.5rem;
 }

@@ -17,62 +17,36 @@ wordTypes.set("pluralNoun", [
     "sandwiches",
 ]);
 wordTypes.set("singleNoun", ["bat", "turtle", "dimebag", "sock", "condom"]);
-let blankElRefs = document.getElementsByClassName("blank");
-let person = "";
-let playButton = document.querySelector("#startGameBtn");
-playButton.addEventListener("click", (event) => {
-    // person = (<HTMLInputElement>document.querySelector("#name")).value;
-    person = "true";
-    if (person) {
-        // Placing this here so that invalid field popup still triggers on invalid form submission
-        event.preventDefault();
-    }
-});
-// Will be placed in the 'if' statement in the eventlistener above
-let surfaceNavEl = document.querySelector("#surfaceNav");
-let svgCircleEl = document.querySelector("#svgCircle");
-playGame(person, surfaceNavEl);
-///////////////////////////////////
-function playGame(person, container) {
-    container.style.display = "flex";
+const surfaceNavEl = document.querySelector("#surfaceNav");
+playGame(surfaceNavEl);
+function playGame(container) {
     container.append(createOptionDial(wordTypes.get("adjective")));
-    let blanks = document.getElementsByClassName("blank");
-    // console.log(blanks);
-    for (const blank of blanks) {
-        let wordType = blank.innerText;
-        // console.log(wordType);
-        if (wordType === "person") {
-        }
-        else {
-            let options = wordTypes.get(wordType);
-            // console.log(options);
-        }
-    }
 }
 function createOptionDial(optionList) {
-    let x = 20;
-    let y = 20;
-    const svgContainer = document.createElementNS(svgNameSpaceURI, "svg");
-    svgContainer.setAttribute("id", "svgContainer");
+    const svgRoot = document.createElementNS(svgNameSpaceURI, "svg");
+    svgRoot.setAttribute("id", "svgRoot");
+    const svgDial = document.createElementNS(svgNameSpaceURI, "g");
+    svgDial.setAttribute("id", "svgDial");
+    svgDial.style.transition = "transform 1s linear";
     for (const option of optionList) {
         let newNode = createOptionNode(option);
-        newNode.setAttribute("transform", `translate(${x}, ${y})`);
-        // newNode.style.transform = `translate(${x}, ${y})`;
-        x += 80;
-        y += 80;
-        svgContainer.append(newNode);
+        svgDial.append(newNode);
     }
-    return svgContainer;
+    svgRoot.append(svgDial);
+    return svgRoot;
 }
 function createOptionNode(textContent) {
     let node = document.createElementNS(svgNameSpaceURI, "g");
     node.classList.add("optionNode");
-    node.setAttribute("fill", "white");
-    node.setAttribute("stroke", "black");
-    node.setAttribute("stroke-width", "2");
+    node.style.transform = "translate(25%, 50%)";
     let circle = document.createElementNS(svgNameSpaceURI, "circle");
     circle.setAttribute("r", "10%");
-    const text = document.createElementNS(svgNameSpaceURI, "text");
+    circle.setAttribute("fill", "white");
+    circle.setAttribute("stroke", "black");
+    circle.setAttribute("stroke-width", "2");
+    let text = document.createElementNS(svgNameSpaceURI, "text");
+    text.setAttribute("text-anchor", "middle");
+    text.setAttribute("dominant-baseline", "middle");
     text.textContent = textContent;
     node.append(circle, text);
     return node;

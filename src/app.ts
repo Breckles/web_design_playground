@@ -18,82 +18,49 @@ wordTypes.set("pluralNoun", [
 ]);
 wordTypes.set("singleNoun", ["bat", "turtle", "dimebag", "sock", "condom"]);
 
-let blankElRefs: HTMLCollectionOf<HTMLSpanElement> = document.getElementsByClassName(
-  "blank"
-) as HTMLCollectionOf<HTMLSpanElement>;
-
-let person = "";
-
-let playButton: HTMLButtonElement = document.querySelector(
-  "#startGameBtn"
-) as HTMLButtonElement;
-
-playButton.addEventListener("click", (event: Event) => {
-  // person = (<HTMLInputElement>document.querySelector("#name")).value;
-  person = "true";
-  if (person) {
-    // Placing this here so that invalid field popup still triggers on invalid form submission
-    event.preventDefault();
-  }
-});
-
-// Will be placed in the 'if' statement in the eventlistener above
-let surfaceNavEl: HTMLDivElement = document.querySelector(
+const surfaceNavEl: HTMLDivElement = document.querySelector(
   "#surfaceNav"
 ) as HTMLDivElement;
-let svgCircleEl: SVGCircleElement = document.querySelector(
-  "#svgCircle"
-) as SVGCircleElement;
 
-playGame(person, surfaceNavEl);
-///////////////////////////////////
+playGame(surfaceNavEl);
 
-function playGame(person: string, container: HTMLElement) {
-  container.style.display = "flex";
+function playGame(container: HTMLElement) {
   container.append(createOptionDial(wordTypes.get("adjective")!));
-  let blanks = document.getElementsByClassName("blank") as HTMLCollectionOf<
-    HTMLSpanElement
-  >;
-  // console.log(blanks);
-
-  for (const blank of blanks) {
-    let wordType = blank.innerText;
-    // console.log(wordType);
-    if (wordType === "person") {
-    } else {
-      let options = wordTypes.get(wordType)!;
-      // console.log(options);
-    }
-  }
 }
 
 function createOptionDial(optionList: string[]): SVGSVGElement {
-  let x = 20;
-  let y = 20;
+  const svgRoot = document.createElementNS(svgNameSpaceURI, "svg");
+  svgRoot.setAttribute("id", "svgRoot");
+  const svgDial = document.createElementNS(svgNameSpaceURI, "g");
+  svgDial.setAttribute("id", "svgDial");
+  svgDial.style.transition = "transform 1s linear";
 
-  const svgContainer = document.createElementNS(svgNameSpaceURI, "svg");
-  svgContainer.setAttribute("id", "svgContainer");
   for (const option of optionList) {
     let newNode = createOptionNode(option);
-    newNode.setAttribute("transform", `translate(${x}, ${y})`);
-    // newNode.style.transform = `translate(${x}, ${y})`;
-    x += 80;
-    y += 80;
-    svgContainer.append(newNode);
+    svgDial.append(newNode);
   }
-  return svgContainer;
+
+  svgRoot.append(svgDial);
+
+  return svgRoot;
 }
 
 function createOptionNode(textContent: string): SVGGElement {
   let node = document.createElementNS(svgNameSpaceURI, "g");
   node.classList.add("optionNode");
-  node.setAttribute("fill", "white");
-  node.setAttribute("stroke", "black");
-  node.setAttribute("stroke-width", "2");
+  node.style.transform = "translate(25%, 50%)";
+
   let circle = document.createElementNS(svgNameSpaceURI, "circle");
   circle.setAttribute("r", "10%");
-  const text = document.createElementNS(svgNameSpaceURI, "text");
+  circle.setAttribute("fill", "white");
+  circle.setAttribute("stroke", "black");
+  circle.setAttribute("stroke-width", "2");
+
+  let text = document.createElementNS(svgNameSpaceURI, "text");
+  text.setAttribute("text-anchor", "middle");
+  text.setAttribute("dominant-baseline", "middle");
   text.textContent = textContent;
+
   node.append(circle, text);
 
   return node;
