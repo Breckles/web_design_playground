@@ -9,51 +9,31 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
-  line-height: 1.5;
 }
 
-.blank {
-  padding: 0 0.5rem;
-  margin: 0 0.5rem;
-  text-decoration: underline;
+#actionBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.adjective {
-  background-color: lightblue;
-}
-
-.person {
-  background-color: red;
-}
-
-.singleNoun,
-.pluralNoun {
-  background-color: salmon;
-}
-
-#controls * {
-  display: block;
-  margin: 0.5rem 0;
-}
-
-#surfaceNav {
+#dialContainer {
   position: fixed;
   top: 0;
   left: calc((100vw / 2) - 50vh);
   width: 100vh;
   height: 100vh;
   background-color: rgb(51, 51, 51, 0.8);
-  align-items: center;
-  justify-content: center;
+  // overflow: hidden;
 }
 
-#innerSurface {
-  width: 10px;
-  height: 10px;
-  background-color: white;
+
+#dial {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
 }
 
-#svgRoot {
-  width: 100%;
-  height: 100%;
+.optionNode {
+  // padding: 0.5rem;
 }
