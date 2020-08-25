@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #333333;
+  --bg-secondary: black;
+  --text-main: #ff6347;
+  --text-secondary: salmon;
+}
+
+html {
+  font-size: 10px;
+  // height: 100%;
+  position: relative;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  // height: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding-bottom: 8rem;
+}
+
+header {
+  background: var(--bg-main);
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  display: flex;
+}
+
+#logo {
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text-main);
+
+  a {
+    text-decoration: none;
+    color: var(--text-main);
+  }
+}
+
+#hamburger {
+  flex: 1;
+
+  path {
+    fill: var(--text-main);
+  }
+}
+
+#navMenu {
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  width: 100%;
+
+  ul {
+    width: 100px;
+    list-style-type: none;
+    background: var(--bg-main);
+    color: var(--text-main);
+  }
+
+  a {
+    color: var(--text-main);
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#previousMenus {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  li {
+    border: 1px solid var(--bg-main);
+  }
+}
+
+#currentMenu {
+  // margin-bottom: 6rem;
+}
+
+#weekdays {
+  height: 34rem;
+  overflow-y: scroll;
+  position: relative;
+  // z-index: 0;
+
+  .weekdayBanner {
+    height: 2rem;
+    border: 2px solid var(--bg-main);
+  }
+
+  li {
+    height: 22rem;
+  }
+
+  #sunday {
+    position: sticky;
+    top: 0;
+    z-index: auto;
+  }
+
+  #monday {
+    position: sticky;
+    top: 2rem;
+    z-index: auto;
+    background: white;
+  }
+
+  #tuesday {
+    position: sticky;
+    top: 4rem;
+    z-index: auto;
+    background: white;
+  }
+
+  #wednesday {
+    position: sticky;
+    top: 6rem;
+    z-index: auto;
+    background: white;
+  }
+
+  #thursday {
+    position: sticky;
+    top: 8rem;
+    z-index: auto;
+    background: white;
+  }
+
+  #friday {
+    position: sticky;
+    top: 10rem;
+    // z-index: 6;
+    background: white;
+  }
+
+  #saturday {
+    position: sticky;
+    top: 12rem;
+    // z-index: 7;
+    background: white;
+  }
+}
+
+#weekdayMenu {
+  height: 200px;
+  display: flex;
+  // align-items: center;
+  justify-content: space-around;
+  z-index: 0;
+
+  border: 2px solid var(--bg-main);
+  background: white;
+
+  div {
+    flex: 1;
+    height: 100%;
+    border: 1px solid var(--bg-main);
+  }
+}
+
+#moreActions {
+  margin-top: 2rem;
+}

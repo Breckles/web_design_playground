@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #333333;
+  --bg-secondary: black;
+  --text-main: #ff6347;
+  --text-secondary: salmon;
+}
+
+html {
+  font-size: 10px;
+  position: relative;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding-bottom: 8rem;
+}
+
+header {
+  background: var(--bg-main);
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  display: flex;
+}
+
+#logo {
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text-main);
+}
+#logo a {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+#hamburger {
+  flex: 1;
+}
+#hamburger path {
+  fill: var(--text-main);
+}
+
+#navMenu {
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  width: 100%;
+}
+#navMenu ul {
+  width: 100px;
+  list-style-type: none;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+#navMenu a {
+  color: var(--text-main);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#previousMenus {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+#previousMenus ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+#previousMenus li {
+  border: 1px solid var(--bg-main);
+}
+
+#weekdays {
+  height: 34rem;
+  overflow-y: scroll;
+  position: relative;
+}
+#weekdays .weekdayBanner {
+  height: 2rem;
+  border: 2px solid var(--bg-main);
+}
+#weekdays li {
+  height: 22rem;
+}
+#weekdays #sunday {
+  position: sticky;
+  top: 0;
+  z-index: auto;
+}
+#weekdays #monday {
+  position: sticky;
+  top: 2rem;
+  z-index: auto;
+  background: white;
+}
+#weekdays #tuesday {
+  position: sticky;
+  top: 4rem;
+  z-index: auto;
+  background: white;
+}
+#weekdays #wednesday {
+  position: sticky;
+  top: 6rem;
+  z-index: auto;
+  background: white;
+}
+#weekdays #thursday {
+  position: sticky;
+  top: 8rem;
+  z-index: auto;
+  background: white;
+}
+#weekdays #friday {
+  position: sticky;
+  top: 10rem;
+  background: white;
+}
+#weekdays #saturday {
+  position: sticky;
+  top: 12rem;
+  background: white;
+}
+
+#weekdayMenu {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 0;
+  border: 2px solid var(--bg-main);
+  background: white;
+}
+#weekdayMenu div {
+  flex: 1;
+  height: 100%;
+  border: 1px solid var(--bg-main);
+}
+
+#moreActions {
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=weekly_menus.css.map */

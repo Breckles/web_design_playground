@@ -15,13 +15,14 @@
 
 html {
   font-size: 10px;
-  height: 100%;
+  // height: 100%;
+  position: relative;
 }
 
 body {
   font-size: 1.6rem;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   margin: 0 auto;
 }
 
@@ -38,7 +39,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: var(--text-main);
+
+  a {
+    text-decoration: none;
+    color: var(--text-main);
+  }
 }
 
 #hamburger {
@@ -59,6 +64,10 @@ header {
     width: 100px;
     list-style-type: none;
     background: var(--bg-main);
+    color: var(--text-main);
+  }
+
+  a {
     color: var(--text-main);
   }
 }
