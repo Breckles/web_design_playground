@@ -1,3 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --bg-main: #333333;
+  --bg-secondary: black;
+  --text-main: #ff6347;
+  --text-secondary: salmon;
+}
+
+html {
+  font-size: 10px;
+  min-height: 100vh;
+  position: relative;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding-bottom: 8rem;
+}
+
+header {
+  background: var(--bg-main);
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  display: flex;
+}
+
+#logo {
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text-main);
+}
+#logo a {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+#hamburger {
+  flex: 1;
+}
+#hamburger path {
+  fill: var(--text-main);
+}
+
+#navMenu {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+#navMenu ul {
+  width: 100px;
+  list-style-type: none;
+  background: var(--bg-main);
+  color: var(--text-main);
+  margin-left: auto;
+}
+#navMenu a {
+  color: var(--text-main);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+main {
+  display: grid;
+  grid-template-rows: minmax(autofill, 2fr) minmax(autofill, 2fr) minmax(autofill, 1fr);
+  width: 100vw;
+  padding-right: 1rem;
+}
+
+#recipeDetails {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "recipeImage recipeImage" "ingredients instructions";
+  font-size: 1.3rem;
+}
+#recipeDetails h3 {
+  margin-bottom: 1rem;
+}
+#recipeDetails ul,
+#recipeDetails ol {
+  padding-left: 3rem;
+}
+
+#recipeImage {
+  grid-area: recipeImage;
+  width: 100%;
+}
+#recipeImage img {
+  max-width: 100%;
+}
+
+#ingredients,
+#instructions {
+  height: 40vh;
+  overflow-y: auto;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  border: 1px solid var(--bg-main);
+}
+
+#ingredients {
+  grid-area: ingredients;
+}
+
+#instructions {
+  grid-area: instructions;
+}
+
+#recipeList {
+  padding-top: 1rem;
+  overflow-y: scroll;
+  position: relative;
+  height: 80vh;
+  border-bottom: 1px solid orange;
+}
+#recipeList ol {
+  list-style-type: none;
+}
+#recipeList .categoryHeader {
+  height: 2.2rem;
+  color: white;
+  background: var(--bg-secondary);
+}
+#recipeList .recipesAlpha li {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+#recipeList .recipesAlpha li.active {
+  background: grey;
+}
+#recipeList .recipesAlpha ol {
+  padding-left: 2rem;
+}
+
+#callToAction {
+  padding: 2rem;
+}
 
 /*# sourceMappingURL=recipe_book.css.map */
